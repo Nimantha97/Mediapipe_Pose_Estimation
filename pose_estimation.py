@@ -1,5 +1,4 @@
 import base64
-
 import cv2
 import mediapipe as mp
 import math
@@ -141,17 +140,27 @@ def estimate_step_2(img_file, resize_width=640):
     else:
         encoded_image = None
 
-    left_ankle = landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value]
-    right_ankle = landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value]
-    left_knee = landmarks[mp.solutions.pose.PoseLandmark.LEFT_KNEE.value]
-    right_knee = landmarks[mp.solutions.pose.PoseLandmark.RIGHT_KNEE.value]
-    left_hip = landmarks[mp_pose.PoseLandmark.LEFT_HIP.value]
-    right_hip = landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value]
-    left_shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value]
-    right_shoulder = landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value]
-    left_elbow = landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value]
-    right_elbow = landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value]
+    # left_ankle = landmarks[mp_pose.PoseLandmark.LEFT_ANKLE.value]
+    # right_ankle = landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE.value]
+    # left_knee = landmarks[mp.solutions.pose.PoseLandmark.LEFT_KNEE.value]
+    # right_knee = landmarks[mp.solutions.pose.PoseLandmark.RIGHT_KNEE.value]
+    # left_hip = landmarks[mp_pose.PoseLandmark.LEFT_HIP.value]
+    # right_hip = landmarks[mp_pose.PoseLandmark.RIGHT_HIP.value]
+    # left_shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value]
+    # right_shoulder = landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value]
+    # left_elbow = landmarks[mp_pose.PoseLandmark.LEFT_ELBOW.value]
+    # right_elbow = landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW.value]
 
+    left_ankle = landmarks[mp_pose.PoseLandmark.LEFT_ANKLE]
+    right_ankle = landmarks[mp_pose.PoseLandmark.RIGHT_ANKLE]
+    left_knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]
+    right_knee = landmarks[mp_pose.PoseLandmark.RIGHT_KNEE]
+    left_hip = landmarks[mp_pose.PoseLandmark.LEFT_HIP]
+    right_hip = landmarks[mp_pose.PoseLandmark.RIGHT_HIP]
+    left_shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER]
+    right_shoulder = landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER]
+    left_elbow = landmarks[mp_pose.PoseLandmark.LEFT_ELBOW]
+    right_elbow = landmarks[mp_pose.PoseLandmark.RIGHT_ELBOW]
 
 
     result_arms_ups, message_arms_ups = check_arms_ups(left_hip, right_hip, left_shoulder, right_shoulder, left_elbow,
@@ -190,7 +199,7 @@ def estimate_step_2(img_file, resize_width=640):
 
 
 #step 3
-def estimate_step_3(img_file, resize_width=640):
+def estimate_step_3(img_file, resize_width=300):
     input_img = cv2.imread(img_file)
     output_img, landmarks = estimPose_img(input_img,
                                           display=False)  # Call the function to get output image and landmarks
@@ -231,16 +240,16 @@ def estimate_step_3(img_file, resize_width=640):
         # plt.show()
 
         is_standing_on_big_toes5,message_toe = is_standing_on_big_toes(results)
-        message_toe1 = f"standing on big toes :  {message_toe}"
-        message_hip_and_ankle = f"hip and ankle: {message_hip_and_ankle}"
-        message_arms_ups = f"arms ups: {message_arms_ups}"
+        message_toe1 = message_toe
+        message_hip_and_ankle = message_hip_and_ankle
+        message_arms_ups = message_arms_ups
 
         return encoded_image,message_toe1,message_hip_and_ankle,message_arms_ups
     else:
-        print("no toe landmarks detected")
+
         message_toe1 = f"No toe landmarks detected"
-        message_hip_and_ankle = f"hip and ankle: {message_hip_and_ankle}"
-        message_arms_ups = f"arms ups: {message_arms_ups}"
+        message_hip_and_ankle = message_hip_and_ankle
+        message_arms_ups = message_arms_ups
 
     return encoded_image,message_toe1,message_hip_and_ankle,message_arms_ups
 

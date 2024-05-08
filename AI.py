@@ -3,7 +3,7 @@ import numpy as np
 import time
 import PoseModule as pm
 
-cap = cv2.VideoCapture(r'D:\project\Research_Development\images\v1.mp4')
+cap = cv2.VideoCapture(r'D:\project\Flask_app\images\v5.mp4')
 
 detector = pm.poseDetector()
 # count = 0
@@ -11,18 +11,23 @@ detector = pm.poseDetector()
 # pTime = 0
 while True:
     success, img = cap.read()
-    img = cv2.resize(img, (1024,720))
+    img = cv2.resize(img, (1600,800))
     # img = cv2.imread("AiTrainer/test.jpg")
     img = detector.findPose(img, False)
     lmList = detector.findPosition(img, False)
     # print(lmList)
     if len(lmList) != 0:
         # Right Arm
-        detector.findAngle(img,28,30,32)
+        #detector.findAngle(img,28,30,32)
         #left Arm
-        #detector.findAngle(img,11,13,15)
-        #detector.findAngle(img,13,11,23)
-        #detector.findAngle(img,23,25,27)
+        detector.findAngle(img,11,13,15)
+        detector.findAngle(img, 12,14,16)
+
+
+        detector.findAngle(img,23,25,27)
+        detector.findAngle(img,24,26,28)
+        detector.findAngle(img,24,12,14)
+        detector.findAngle(img,23,11,13)
         #detector.findAngle(img,28,30,32)
         #detector.findAngle(img,27,29,31)
 

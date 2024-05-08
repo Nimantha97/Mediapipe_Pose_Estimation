@@ -1,0 +1,161 @@
+
+<!--new file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tadasana Yoga Asanas - Pose Estimation</title>
+    <link rel="stylesheet" type="text/css" href="static\\yoga-style.css">
+</head>
+<body style="background-color: rgba(177,58,47,0.37); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+    <h1>Tadasana Yoga Asanas - Pose Estimation</h1>
+    <div class="wrapper">
+        <div class="row d-flex">
+            <div class="card">
+                <input type="checkbox" id="card1" class="more" aria-hidden="true">
+                <div class="content">
+                    <div class="front" style="background-image: url('static\\img\\step1.png');">
+
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <div class="button-container">
+                                <div class="description" style="max-width: 250px;">
+                                    <p>Analyze your starting posture and hand positioning for proper form.</p>
+                                    <label for="step1_image">Upload Image:</label>
+                                    <hr style="margin: 10px 0; height: 1px; border: none; background-color: #ccc;">
+                                    <div style="display: flex; align-items: center;">
+                                        <form action="/step1_estimation" method="post" enctype="multipart/form-data">
+                                        <input type="file" required name="step1_img" id="step1_image" accept="image/*" style="opacity: 75%;">
+                                        <button type="submit">Enter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                    <h2 style="margin-top: -150px;">STEP 1</h2>  </div>
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="card2" class="more" aria-hidden="true">
+                <div class="content">
+                    <div class="front" style="background-image: url('static\\img\\step2.png');">
+
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <div class="button-container">
+                                <div class="description" style="max-width: 250px;">
+                                    <p>Assess leg and hip alignment to engage muscles correctly.</p>
+                                    <label for="step2_image">Upload Image:</label>
+                                    <hr style="margin: 10px 0; height: 1px; border: none; background-color: #ccc;">
+                                    <div style="display: flex; align-items: center;">
+                                        <form action="/step2_estimation" method="post" enctype="multipart/form-data">
+                                        <input type="file" required name="step2_img" id="step2_image" accept="image/*" style="opacity: 75%;">
+                                        <button type="submit">Enter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                    <h2 style="margin-top: -150px;">STEP 2</h2>  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                    <input type="checkbox" id="card3" class="more" aria-hidden="true">
+                    <div class="content">
+                        <div class="front" style="background-image: url('static\\img\\step3.png');" >
+
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <div class="button-container">
+                                    <div class="description" style="max-width: 250px;">
+                                        <p>Evaluate side view to ensure balanced weight distribution on feet. Please input ride side view image</p>
+                                        <label for="step2_image">Upload Image:</label>
+                                        <hr style="margin: 10px 0; height: 1px; border: none; background-color: #ccc;">
+                                        <div style="display: flex; align-items: center;">
+                                            <form action="/step3_estimation" method="post" enctype="multipart/form-data">
+                                            <input type="file" required name="step3_img" id="step3_image" accept="image/*" style="opacity: 75%;">
+                                            <button type="submit">Enter</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                        <h2 style="margin-top: -150px;">STEP 3</h2>  </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+
+
+
+
+
+
+<!--        <div class="row">-->
+<!--            <div class="card">-->
+<!--                <input type="checkbox" id="card4" class="more" aria-hidden="true">-->
+<!--                <div class="content">-->
+<!--                    <div class="front" style="background-image: url('static\\img\\Trikonasana.jpg');">-->
+<!--                            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">-->
+<!--                                <h2>STEP 1</h2>-->
+<!--                            </div>-->
+<!--                    </div>-->
+<!--                    <div class="back">-->
+<!--                        <div class="inner">-->
+<!--                            <div class="button-container">-->
+<!--                                <div class="description">-->
+<!--                                    <p>It helps in reducing excess body weight, strengthens legs and arms, and helps in improving digestion.</p>-->
+<!--                                    <label for="step4_image">Upload Image:</label>-->
+<!--                                    <hr style="margin: 10px 0; height: 1px; border: none; background-color: #ccc;">-->
+<!--                                    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">-->
+<!--                                        <input type="file" id="step4_image" accept="image/*">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="row">-->
+<!--                    <div class="card">-->
+<!--                    <input type="checkbox" id="card5" class="more" aria-hidden="true">-->
+<!--                    <div class="content">-->
+<!--                        <div class="front" style="background-image: url('static\\img\\Trikonasana.jpg');">-->
+<!--                                <div style="display: flex; justify-content: center; align-items: center; height: 100%;">-->
+<!--                                    <h2>STEP 1</h2>-->
+<!--                                </div>-->
+<!--                        </div>-->
+<!--                        <div class="back">-->
+<!--                            <div class="inner">-->
+<!--                                <div class="button-container">-->
+<!--                                    <div class="description">-->
+<!--                                        <p>It helps in reducing excess body weight, strengthens legs and arms, and helps in improving digestion.</p>-->
+<!--                                        <label for="step5_image">Upload Image:</label>-->
+<!--                                        <hr style="margin: 10px 0; height: 1px; border: none; background-color: #ccc;">-->
+<!--                                        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">-->
+<!--                                            <input type="file" id="step5_image" accept="image/*">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->

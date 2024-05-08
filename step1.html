@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Pose Analysis Feedback</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">-->
+<!--    <link rel="stylesheet" type="text/css" href="static\\style.css">-->
+<!--</head>-->
+<!--<body style="background-color: rgba(221,198,198,0.37); background-repeat: no-repeat; background-size: cover; background-position: center;">-->
+<!--  <div class="container">-->
+<!--    <h1>Step 1 Pose Analysis Results</h1>-->
+
+<!--    <div class="feedback-wrapper">-->
+<!--      {% if feedback1 and feedback2 %}-->
+<!--        <p class="feedback">{{ feedback1 }}</p>-->
+<!--        <p class="feedback">{{ feedback2 }}</p>-->
+<!--      {% else %}-->
+<!--        <p class="no-feedback">No feedback available yet. Upload an image to get started.</p>-->
+<!--      {% endif %}-->
+<!--    </div>-->
+
+<!--      {% if processed_image %}-->
+<!--      <div class="image-wrapper">-->
+<!--        <img src="data:image/png;base64,{{ processed_image }}" alt="Processed Image">-->
+<!--      </div>-->
+<!--    {% endif %}-->
+
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pose Analysis Feedback</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="static\\style.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-container {
+            width: 48%;
+        }
+
+        .feedback-container {
+            width: 48%;
+        }
+    </style>
+</head>
+<body style="background-color: rgba(221,198,198,0.37); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <h1>Step 1 Pose Analysis Results</h1>
+    <div class="container">
+        <div class="image-container">
+            {% if processed_image %}
+            <div class="image-wrapper">
+                <img src="data:image/png;base64,{{ processed_image }}" alt="Processed Image">
+            </div>
+            {% endif %}
+        </div>
+        <div class="feedback-container">
+            <div class="feedback-wrapper">
+                {% if feedback1 and feedback2 %}
+                    <p class="feedback">{{ feedback1 }}</p>
+                    <p class="feedback">{{ feedback2 }}</p>
+                {% else %}
+                    <p class="no-feedback">No feedback available yet. Upload an image to get started.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

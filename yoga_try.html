@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pose Detection</title>
+
+</head>
+
+
+
+<body>
+    <h1>Upload images for pose analysis</h1>
+
+    <form method="post" enctype="multipart/form-data">
+    <h2>Step 1</h2>
+    <input type="hidden" name="step" value="step1">
+    <input type="file" name="step1_img" id="step1_image" accept="image/*" required>
+    <button type="submit">Analyze Step 1</button>
+    {% if step1_feedback %}
+    <p>{{ step1_feedback }}</p>
+    {% endif %}
+
+    <h2>Step 2</h2>
+    <input type="hidden" name="step" value="step2">
+    <input type="file" name="step2_img" id="step2_image" accept="image/*" required>
+    <button type="submit">Analyze Step 2</button>
+    {% if step2_feedback %}
+    <p>{{ step2_feedback }}</p>
+    {% endif %}
+
+    <h2>Step 3</h2>
+    <input type="hidden" name="step" value="step3">
+    <input type="file" name="step3_img" id="step3_image" accept="image/*" required>
+    <button type="submit">Analyze Step 3</button>
+    {% if step3_feedback %}
+    <p>{{ step3_feedback }}</p>
+    {% endif %}
+</form>
+</body>
+</html>
